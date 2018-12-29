@@ -8,16 +8,12 @@
     <div>
         <h1><a href="/">My Blog</a></h1>
     </div>
-    <div>
-    <p>Published : 28.12.2018, 16:54</p>
-    <h2><a href="">İlk Blogum</a></h2>
-    <p>Çok Heyecanlı! Bu benim İlk Bloğum!!!</p>
-    </div>
-
-    <div>
-        <p>published : 28.12.2018, 16:56</p>
-        <h2><a href="">İkinci Gönderim...</a></h2>
-        <p>Bir varmış, bir yokmuş...</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>published:{{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
